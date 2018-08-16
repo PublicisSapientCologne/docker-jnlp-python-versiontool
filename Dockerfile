@@ -1,4 +1,4 @@
-FROM openjdk:10-jdk
+FROM openjdk:8-jdk
 
 ENV HOME /home/jenkins
 
@@ -10,7 +10,7 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ARG VERSION=3.20
+ARG VERSION=3.23
 ARG AGENT_WORKDIR=/home/jenkins/agent
 
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar \
